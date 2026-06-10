@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Testimonials — StudyAI</title>
+    <meta name="description" content="Read real reviews and success stories from students at Stanford, MIT, NYU and more who optimized their grades and study habits with StudyAI.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>StudyAI</span>
+            </a>
+            <div class="nav-menu" id="nav-menu-drawer">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="testimonials.html" class="active">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </button>
+                <div class="flex gap-2" id="nav-auth-actions"></div>
+                <button class="hamburger" id="nav-hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="hero-bg" style="padding-top: calc(var(--navbar-height) + var(--space-16)); padding-bottom: var(--space-16);" id="testimonials-header">
+        <div class="container">
+            <div class="section-header reveal" style="max-width: 680px;">
+                <span class="section-tag">⭐ Student Reviews</span>
+                <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: var(--space-4);">Loved by <span class="gradient-text">High-Achievers</span></h1>
+                <p class="text-lg text-secondary">
+                    Thousands of students have eliminated deadline stress, improved focus, and raised their GPAs using StudyAI's personalized scheduling engine.
+                </p>
+                <!-- Rating Summary -->
+                <div class="flex-center gap-6" style="margin-top: var(--space-6); justify-content: center;">
+                    <div class="flex-center gap-2">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--text-primary);">4.9</span>
+                        <div class="testimonial-stars" style="margin-bottom:0;">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <div style="width: 1px; height: 30px; background: var(--border-color);"></div>
+                    <span class="text-sm font-semibold text-secondary">Based on 2,000+ Student Reviews</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FEATURED TESTIMONIALS -->
+    <section class="section" id="featured-reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Top Reviews</span>
+                <h2>Success Stories That Inspire</h2>
+            </div>
+            <div class="testimonial-grid-premium reveal">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card-premium">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">The AI Study Planner completely transformed my academic performance. I went from a 3.1 to a 3.8 GPA in just one semester. The spaced repetition blocks are absolutely game-changing — I actually retain what I study now instead of just cramming.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #10b981;">SJ</div>
+                        <div><h4>Sarah Jenkins</h4><p>Stanford University · Computer Science</p></div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card-premium" style="border-color: var(--green-200);">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">As an MIT student with 6 simultaneous courses, time optimization is critical. StudyAI allocates study blocks perfectly around my exam dates and balances subjects by difficulty. I can finally stop stressing about scheduling and focus on actually learning.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #6366f1;">DC</div>
+                        <div><h4>David Chen</h4><p>MIT · Electrical Engineering</p></div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card-premium">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">As a working student, every hour is precious. StudyAI ensures every study block counts and tracks my streaks perfectly. I haven't missed a single deadline in 4 months. This tool should be mandatory for every college student globally.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #f59e0b;">MR</div>
+                        <div><h4>Maria Rodriguez</h4><p>NYU · Business Administration</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY REVIEWS (Dynamic) -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);" id="community-reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Community</span>
+                <h2>What the Community Says</h2>
+                <p>Real experiences from students just like you — unfiltered, honest, and inspiring.</p>
+            </div>
+            <div class="grid grid-3 reveal" id="testimonials-grid">
+                <!-- Loaded dynamically by script below -->
+            </div>
+        </div>
+    </section>
+
+    <!-- WRITE A REVIEW -->
+    <section class="section" id="write-review-section">
+        <div class="container" style="max-width: 640px;">
+            <div class="card reveal" style="padding: var(--space-8);">
+                <h2 class="font-bold text-2xl text-center" style="margin-bottom: var(--space-2);">Share Your Journey</h2>
+                <p class="text-xs text-secondary text-center" style="margin-bottom: var(--space-6);">Your review helps other students discover smarter planning strategies.</p>
+                
+                <form id="review-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="review-name">Full Name</label>
+                            <input type="text" id="review-name" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-school">Institution / School</label>
+                            <input type="text" id="review-school" class="form-control" placeholder="Harvard University" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-rating">Rating</label>
+                        <select id="review-rating" class="form-control" required>
+                            <option value="5">⭐⭐⭐⭐⭐ (5 Stars — Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (4 Stars — Great)</option>
+                            <option value="3">⭐⭐⭐ (3 Stars — Good)</option>
+                            <option value="2">⭐⭐ (2 Stars — Fair)</option>
+                            <option value="1">⭐ (1 Star — Poor)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Your Experience</label>
+                        <textarea id="review-text" class="form-control" placeholder="How did StudyAI help you organize your studies and improve your results?" required style="min-height: 130px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="review-submit-btn">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        Submit My Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm" id="testimonials-cta">
+        <div class="container">
+            <div class="welcome-banner reveal" style="padding: var(--space-10) var(--space-12); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-family: var(--font-display); font-weight: 800; margin-bottom: var(--space-4); color: white;">Join 50,000+ Students Already Thriving</h2>
+                <p style="margin-bottom: var(--space-6); color: rgba(255,255,255,0.8);">Create your personalized AI study schedule for free and write your own success story.</p>
+                <a href="signup.html" class="btn btn-lg" style="background: white; color: var(--green-800); font-weight: 700; border: none;" id="testimonials-cta-btn">Get Started Free →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3>StudyAI</h3><p>Building high-performing students through smart, AI-driven organization tools.</p></div>
+                <div class="footer-col"><h4>Platform</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="dashboard.html">Dashboard</a></div>
+                <div class="footer-col"><h4>Support</h4><a href="testimonials.html">Reviews</a><a href="contact.html">Contact Us</a><a href="contact.html#faq-section">FAQs</a></div>
+                <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 StudyAI. Built with ❤️ for InAmigos. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Privacy Policy</a>
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('testimonials-grid');
+            const form = document.getElementById('review-form');
+            
+            function renderTestimonials() {
+                const list = Storage.get('testimonials_list', []);
+                grid.innerHTML = '';
+                list.forEach(item => {
+                    const stars = Array(parseInt(item.rating)).fill(`<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`).join('');
+                    const colors = ['#10b981', '#6366f1', '#f59e0b', '#3b82f6', '#ec4899'];
+                    const avatarBg = colors[item.name.charCodeAt(0) % colors.length];
+                    const card = document.createElement('div');
+                    card.className = 'testimonial-card-premium';
+                    card.innerHTML = `
+                        <div class="testimonial-stars" style="margin-bottom: var(--space-2);">${stars}</div>
+                        <div class="quote-mark">"</div>
+                        <blockquote style="font-size:0.92rem;color:var(--text-secondary);line-height:1.7;font-style:italic;margin-bottom:var(--space-5);">${item.text}</blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:${avatarBg}">${item.avatar}</div>
+                            <div><h4>${item.name}</h4><p>${item.institution}</p></div>
+                        </div>`;
+                    grid.appendChild(card);
+                });
+            }
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('review-name').value.trim();
+                const school = document.getElementById('review-school').value.trim();
+                const rating = document.getElementById('review-rating').value;
+                const text = document.getElementById('review-text').value.trim();
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                const currentList = Storage.get('testimonials_list', []);
+                currentList.unshift({ id: Date.now(), name, institution: school, rating: parseInt(rating), text, avatar: initials });
+                Storage.set('testimonials_list', currentList);
+                form.reset();
+                showToast('Review submitted! Thank you for your feedback.', 'success');
+                renderTestimonials();
+            });
+            
+            renderTestimonials();
+        });
+    </script>
+</body>
+</html>

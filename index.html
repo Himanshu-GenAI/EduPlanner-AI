@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner — Plan Smarter, Learn Faster | StudyAI</title>
+    <meta name="description" content="Optimize your learning routine with StudyAI. Generate personalized study calendars, track performance metrics, and crush academic goals with AI-powered scheduling.">
+    <meta name="keywords" content="AI study planner, study schedule generator, exam preparation, academic productivity, student tools">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>StudyAI</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu-drawer">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <div class="flex gap-2" id="nav-auth-actions">
+                    <!-- Dynamic rendering by app.js -->
+                </div>
+                <button class="hamburger" id="nav-hamburger" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <header class="hero-bg" style="padding-top: calc(var(--navbar-height) + var(--space-16)); padding-bottom: var(--space-24);" id="hero-section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+                <div class="reveal-left active">
+                    <span class="section-tag">🎓 AI-Powered Study Planning</span>
+                    <h1 style="font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 800; margin-bottom: var(--space-6); line-height: 1.08; letter-spacing: -1px;">
+                        Plan Smarter,<br>
+                        <span class="gradient-text">Learn Faster.</span>
+                    </h1>
+                    <p class="text-lg text-secondary" style="margin-bottom: var(--space-8); max-width: 520px; line-height: 1.75;">
+                        Ditch rigid, static schedules. StudyAI's intelligent algorithm builds dynamic, personalized timetables around your subjects, difficulty levels, and exam deadlines — automatically.
+                    </p>
+                    <div class="flex gap-4 flex-wrap">
+                        <a href="signup.html" class="btn btn-primary btn-lg" id="hero-cta-primary">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Get Started Free
+                        </a>
+                        <a href="#dashboard-preview" class="btn btn-secondary btn-lg" id="hero-cta-demo">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            View Demo
+                        </a>
+                    </div>
+                    <div class="flex gap-6 flex-wrap" style="margin-top: var(--space-8);">
+                        <div class="flex-center gap-2">
+                            <svg fill="currentColor" viewBox="0 0 20 20" style="width:18px;height:18px;color:var(--green-500)"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-sm font-semibold text-secondary">No credit card required</span>
+                        </div>
+                        <div class="flex-center gap-2">
+                            <svg fill="currentColor" viewBox="0 0 20 20" style="width:18px;height:18px;color:var(--green-500)"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-sm font-semibold text-secondary">Setup in 2 minutes</span>
+                        </div>
+                        <div class="flex-center gap-2">
+                            <svg fill="currentColor" viewBox="0 0 20 20" style="width:18px;height:18px;color:var(--green-500)"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-sm font-semibold text-secondary">Works offline</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-right active" style="position: relative;">
+                    <!-- Hero Widget Mockup -->
+                    <div class="glass-card" style="padding: var(--space-6); animation: float 6s ease-in-out infinite; border: 2px solid rgba(16,185,129,0.2);">
+                        <div class="flex-between" style="margin-bottom: var(--space-4);">
+                            <div class="flex-center gap-2">
+                                <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></span>
+                                <span style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></span>
+                                <span style="width:12px;height:12px;border-radius:50%;background:#28c840;"></span>
+                            </div>
+                            <span class="badge badge-green" style="font-size: 0.7rem;">AI Timetable v2.4</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                            <div class="card-flat" style="padding: 14px; border-left: 4px solid var(--green-500); border-radius: var(--radius-md);">
+                                <div class="flex-between">
+                                    <span class="font-bold text-sm">Biology Exam Review</span>
+                                    <span class="text-xs text-secondary">09:00 – 10:30 AM</span>
+                                </div>
+                                <p class="text-xs text-tertiary" style="margin-top: 4px;">Spaced repetition block · Priority High</p>
+                            </div>
+                            <div class="card-flat" style="padding: 14px; border-left: 4px solid var(--indigo-500); border-radius: var(--radius-md);">
+                                <div class="flex-between">
+                                    <span class="font-bold text-sm">Calculus Practice</span>
+                                    <span class="text-xs text-secondary">11:00 – 12:30 PM</span>
+                                </div>
+                                <p class="text-xs text-tertiary" style="margin-top: 4px;">Active recall & problem sets · Priority High</p>
+                            </div>
+                            <div class="card-flat" style="padding: 14px; border-left: 4px solid var(--amber-500); border-radius: var(--radius-md); opacity: 0.7;">
+                                <div class="flex-between">
+                                    <span class="font-bold text-sm">History Summary Sheets</span>
+                                    <span class="text-xs text-secondary">02:00 – 03:00 PM</span>
+                                </div>
+                                <p class="text-xs text-tertiary" style="margin-top: 4px;">Feynman Technique exercises · Priority Medium</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: var(--space-4); padding: var(--space-3); background: var(--green-50); border-radius: var(--radius-md); display:flex; align-items:center; gap:8px;">
+                            <svg fill="currentColor" viewBox="0 0 20 20" style="width:16px;height:16px;color:var(--green-600);flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-xs font-semibold" style="color:var(--green-700);">🔥 14-day streak — Keep it up!</span>
+                        </div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="glass-card" style="position:absolute; bottom:-20px; right:-16px; padding: 12px 18px; display:flex; align-items:center; gap:8px; animation: float 5s ease-in-out 1s infinite;">
+                        <div style="width:32px;height:32px;background:var(--green-100);border-radius:50%;display:flex;align-items:center;justify-content:center;">📊</div>
+                        <div>
+                            <div class="text-xs font-bold" style="color:var(--text-primary);">95% Complete</div>
+                            <div class="text-xs text-tertiary">Weekly Goal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== STATS SECTION ===== -->
+    <section class="section-sm" id="stats-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="stat-number-grid reveal">
+                <div class="stat-number-card">
+                    <div class="stat-num">50,000+</div>
+                    <div class="stat-label">Active Students Helped</div>
+                </div>
+                <div class="stat-number-card">
+                    <div class="stat-num">1M+</div>
+                    <div class="stat-label">Study Hours Tracked</div>
+                </div>
+                <div class="stat-number-card">
+                    <div class="stat-num">95%</div>
+                    <div class="stat-label">Goal Completion Rate</div>
+                </div>
+                <div class="stat-number-card">
+                    <div class="stat-num">100+</div>
+                    <div class="stat-label">Partner Institutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY AI STUDY PLANNER ===== -->
+    <section class="section" id="why-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Why StudyAI?</span>
+                <h2>Students Are Failing to Plan — Not Failing to Try</h2>
+                <p>The modern student faces a perfect storm of academic overload, rigid planning tools, and zero personalization. StudyAI changes everything.</p>
+            </div>
+
+            <div class="grid grid-3 reveal" style="margin-bottom: var(--space-16);">
+                <div class="pain-card">
+                    <div class="pain-icon rose">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="pain-title">Poor Time Management</div>
+                        <p class="pain-desc">78% of students spend more time planning than actually studying. Manual timetables collapse the moment one session is missed, creating a cycle of guilt and procrastination.</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon amber">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M12 20v1M7.05 7.05l-.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="pain-title">Exam Stress &amp; Burnout</div>
+                        <p class="pain-desc">Last-minute cramming leads to anxiety, poor retention, and lower grades. Without structured spacing, even dedicated students fail to consolidate knowledge before exams.</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon indigo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <div>
+                        <div class="pain-title">Inconsistent Study Habits</div>
+                        <p class="pain-desc">Static calendars don't adapt to real life. When schedules break, students lose momentum entirely — there's no mechanism to recalibrate and continue from where they left off.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS Comparison -->
+            <div class="section-header reveal" style="margin-bottom: var(--space-8);">
+                <span class="section-tag">The AI Difference</span>
+                <h2>Traditional Planning vs. StudyAI</h2>
+            </div>
+            <div class="vs-section reveal">
+                <div class="vs-col bad">
+                    <div class="vs-col-title">
+                        <span>❌</span> Traditional Planner
+                    </div>
+                    <div class="vs-item">📋 Rigid, fixed weekly blocks</div>
+                    <div class="vs-item">💥 Collapses when one session is missed</div>
+                    <div class="vs-item">📚 Treats all subjects equally</div>
+                    <div class="vs-item">😰 No urgency scaling near exams</div>
+                    <div class="vs-item">🔄 Manual revision scheduling</div>
+                </div>
+                <div class="vs-label">VS</div>
+                <div class="vs-col good">
+                    <div class="vs-col-title">
+                        <span>✅</span> StudyAI Algorithm
+                    </div>
+                    <div class="vs-item">🧠 Dynamic, adaptive scheduling engine</div>
+                    <div class="vs-item">🔁 Self-recalibrates on any change</div>
+                    <div class="vs-item">⚖️ Weights subjects by difficulty</div>
+                    <div class="vs-item">📈 Urgency scales automatically with exam dates</div>
+                    <div class="vs-item">🔬 Spaced repetition built into every plan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" style="background: var(--bg-secondary);" id="how-it-works-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Workflow</span>
+                <h2>Three Steps to Mastery</h2>
+                <p>From setup to your first personalized study session in under 2 minutes.</p>
+            </div>
+            
+            <div class="grid grid-3 reveal">
+                <div class="card-flat" style="padding: var(--space-8); border-radius: var(--radius-xl); text-align: center; border: 1.5px solid var(--border-color);">
+                    <div class="flex-center" style="width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-primary); color: var(--white); font-weight: 800; font-size: 1.4rem; margin: 0 auto var(--space-6); box-shadow: var(--shadow-green);">1</div>
+                    <h3 class="text-xl font-bold" style="margin-bottom: var(--space-3);">Input Study Goals</h3>
+                    <p class="text-sm text-secondary">Tell us your subjects, difficulty levels, preferred study times, and final exam dates. The more detail you provide, the smarter your schedule becomes.</p>
+                </div>
+                <div class="card-flat" style="padding: var(--space-8); border-radius: var(--radius-xl); text-align: center; border: 1.5px solid var(--border-color);">
+                    <div class="flex-center" style="width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-primary); color: var(--white); font-weight: 800; font-size: 1.4rem; margin: 0 auto var(--space-6); box-shadow: var(--shadow-green);">2</div>
+                    <h3 class="text-xl font-bold" style="margin-bottom: var(--space-3);">Generate AI Plan</h3>
+                    <p class="text-sm text-secondary">Our scheduling algorithm balances study weights, schedules Pomodoro breaks, and allocates slots dynamically based on urgency and difficulty.</p>
+                </div>
+                <div class="card-flat" style="padding: var(--space-8); border-radius: var(--radius-xl); text-align: center; border: 1.5px solid var(--border-color);">
+                    <div class="flex-center" style="width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-primary); color: var(--white); font-weight: 800; font-size: 1.4rem; margin: 0 auto var(--space-6); box-shadow: var(--shadow-green);">3</div>
+                    <h3 class="text-xl font-bold" style="margin-bottom: var(--space-3);">Track &amp; Succeed</h3>
+                    <p class="text-sm text-secondary">Log hours on your dashboard, check off daily tasks, review analytics insights, and watch your streak grow while your grades improve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ADVANCED FEATURES ===== -->
+    <section class="section" id="features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Features</span>
+                <h2>Everything You Need to Excel Academically</h2>
+                <p>8 powerful tools engineered on neuroscience principles to maximize focus, retention, and exam performance.</p>
+            </div>
+
+            <div class="grid-auto reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5);">
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3>AI Timetable Generator</h3>
+                    <p>Calculates dynamic study hours per day, prioritizes weak subjects, and builds a comprehensive weekly calendar balancing all your courses.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon amber">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <h3>Smart Reminders</h3>
+                    <p>Timely browser alerts before sessions begin, minimizing procrastination and reinforcing healthy study habit loops automatically.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon indigo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Goal Tracking</h3>
+                    <p>Set weekly study milestones and track target vs. actual completion rates in real-time. Visualize your progress with satisfaction metrics.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon rose">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                    </div>
+                    <h3>Study Streak Tracking</h3>
+                    <p>Gamified daily streaks keep motivation high. Visual heatmaps and milestone rewards create a powerful consistency engine.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon sky">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3>Exam Preparation Planner</h3>
+                    <p>Prioritizes upcoming exams and spaces out review cycles using science-backed spaced repetition to reinforce learning efficiently.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                    </div>
+                    <h3>Performance Analytics</h3>
+                    <p>Visual analytics reports, subject breakdown percentages, canvas-rendered donut charts, and a personalized focus index score.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon violet">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M12 20v1M7.05 7.05l-.707.707"></path><circle cx="12" cy="12" r="3" stroke-linecap="round"></circle></svg>
+                    </div>
+                    <h3>Personalized Recommendations</h3>
+                    <p>AI identifies your weakest subjects, suggests optimal study session lengths, and recommends technique adjustments based on your patterns.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon indigo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3>Subject-wise Progress Reports</h3>
+                    <p>Detailed progress tracking per subject — hours logged, tasks completed, revision coverage, and predicted readiness before each exam.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-10);">
+                <a href="features.html" class="btn btn-secondary btn-lg" id="see-all-features-btn">Explore All Features →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DASHBOARD PREVIEW ===== -->
+    <section class="section" style="background: var(--bg-secondary);" id="dashboard-preview">
+        <div class="container">
+            <div class="grid grid-2 reveal" style="align-items: center; gap: var(--space-16);">
+                <div>
+                    <span class="section-tag">Dashboard Preview</span>
+                    <h2 class="font-bold" style="font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: var(--space-6);">Your Command Center for Academic Success</h2>
+                    <p class="text-secondary" style="margin-bottom: var(--space-6); line-height: 1.7;">Get a complete overview of your academic health. Track weekly progress, monitor upcoming exams, and see your study hours at a glance — all in one intuitive dashboard.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-8);">
+                        <div class="flex-center" style="justify-content: flex-start; gap: var(--space-3);">
+                            <div style="width:36px;height:36px;background:var(--green-100);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--green-600)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold">Real-time Progress Tracking</div>
+                                <div class="text-xs text-secondary">Live updates as you complete study sessions</div>
+                            </div>
+                        </div>
+                        <div class="flex-center" style="justify-content: flex-start; gap: var(--space-3);">
+                            <div style="width:36px;height:36px;background:var(--green-100);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--green-600)"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold">Weekly Calendar Grid</div>
+                                <div class="text-xs text-secondary">Visual breakdown of study sessions by day and subject</div>
+                            </div>
+                        </div>
+                        <div class="flex-center" style="justify-content: flex-start; gap: var(--space-3);">
+                            <div style="width:36px;height:36px;background:var(--green-100);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--green-600)"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold">Upcoming Exam Alerts</div>
+                                <div class="text-xs text-secondary">Never miss a deadline with countdown tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary" id="preview-dashboard-btn">Open My Dashboard →</a>
+                </div>
+
+                <!-- Dashboard Mockup Widget -->
+                <div class="reveal-right">
+                    <div class="dashboard-mockup">
+                        <div class="mockup-topbar">
+                            <div class="mockup-dot red"></div>
+                            <div class="mockup-dot yellow"></div>
+                            <div class="mockup-dot green"></div>
+                            <span style="margin-left:12px; font-size:0.78rem; color:var(--text-tertiary); font-weight:500;">StudyAI Dashboard</span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-stat">
+                                <div class="mockup-stat-label">Study Hours This Week</div>
+                                <div class="mockup-stat-value">24.5h</div>
+                            </div>
+                            <div class="mockup-stat">
+                                <div class="mockup-stat-label">Goal Completion</div>
+                                <div class="mockup-stat-value" style="color: var(--green-600);">78%</div>
+                            </div>
+                            <div class="mockup-calendar">
+                                <div class="mockup-calendar-title">📅 This Week — June 2026</div>
+                                <div class="mockup-week-row">
+                                    <div class="mockup-day">M</div>
+                                    <div class="mockup-day has-session">T</div>
+                                    <div class="mockup-day has-session">W</div>
+                                    <div class="mockup-day today">T</div>
+                                    <div class="mockup-day has-session">F</div>
+                                    <div class="mockup-day exam">S</div>
+                                    <div class="mockup-day">S</div>
+                                </div>
+                            </div>
+                            <div class="mockup-progress-row">
+                                <div class="mockup-progress-label"><span>Mathematics</span><span style="color:var(--green-600)">78%</span></div>
+                                <div class="mockup-bar"><div class="mockup-bar-fill green"></div></div>
+                                <div class="mockup-progress-label"><span>Physics</span><span style="color:var(--indigo-500)">62%</span></div>
+                                <div class="mockup-bar"><div class="mockup-bar-fill indigo"></div></div>
+                                <div class="mockup-progress-label"><span>History</span><span style="color:var(--amber-500)">45%</span></div>
+                                <div class="mockup-bar"><div class="mockup-bar-fill amber"></div></div>
+                            </div>
+                            <div class="mockup-exam-list">
+                                <div class="mockup-calendar-title">📌 Upcoming Exams</div>
+                                <div class="mockup-exam-item">
+                                    <span class="mockup-exam-name">Physics Final</span>
+                                    <span class="mockup-exam-date">Jun 14</span>
+                                    <span class="mockup-exam-badge urgent">3 days</span>
+                                </div>
+                                <div class="mockup-exam-item">
+                                    <span class="mockup-exam-name">Math Midterm</span>
+                                    <span class="mockup-exam-date">Jun 20</span>
+                                    <span class="mockup-exam-badge upcoming">9 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section" id="testimonials-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Student Reviews</span>
+                <h2>Loved by High-Achievers Worldwide</h2>
+                <p>Real success stories from students who transformed their academic performance with StudyAI.</p>
+            </div>
+
+            <div class="testimonial-grid-premium reveal">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card-premium">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">The AI Study Planner completely transformed my academic performance. I went from a 3.1 to a 3.8 GPA in just one semester. The spaced repetition blocks are absolutely game-changing — I actually retain what I study now.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #10b981;">SJ</div>
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <p>Stanford University · Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card-premium" style="border-color: var(--green-200);">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">As an MIT student with 6 simultaneous courses, time optimization is everything. StudyAI allocates study blocks beautifully around my exam dates and balances subjects by difficulty. I can finally stop stressing about scheduling.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #6366f1;">DC</div>
+                        <div>
+                            <h4>David Chen</h4>
+                            <p>MIT · Electrical Engineering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card-premium">
+                    <div class="testimonial-stars" style="margin-bottom: var(--space-3);">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="quote-mark">"</div>
+                    <blockquote style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; margin-bottom: var(--space-6);">As a working student, every hour is gold. StudyAI ensures every study block counts and tracks my streaks perfectly. I haven't missed a deadline in 4 months. This tool should be mandatory for every college student.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #f59e0b;">MR</div>
+                        <div>
+                            <h4>Maria Rodriguez</h4>
+                            <p>NYU · Business Administration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-10);">
+                <a href="testimonials.html" class="btn btn-outline" id="see-all-reviews-btn">Read More Reviews →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="section" style="background: var(--bg-secondary);" id="pricing-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Pricing</span>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Start free, upgrade when you're ready. Every plan is built to help you succeed academically.</p>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle reveal" id="billing-toggle-container">
+                <span id="billing-monthly-label" class="active">Monthly</span>
+                <button class="toggle-switch" id="billing-toggle-btn" aria-label="Toggle billing period"></button>
+                <span id="billing-yearly-label">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-grid reveal">
+                <!-- Free -->
+                <div class="pricing-card">
+                    <div class="pricing-badge free">Free Forever</div>
+                    <div class="pricing-price">
+                        <span class="amount">$0</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-desc">Perfect for getting started with AI-powered study planning.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            AI Schedule (up to 3 subjects)
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Basic Progress Dashboard
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Study Streak Tracker
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            PDF Schedule Export
+                        </div>
+                        <div class="pricing-feature unavailable">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Advanced Analytics
+                        </div>
+                        <div class="pricing-feature unavailable">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Calendar Integration
+                        </div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="pricing-free-cta">Get Started Free</a>
+                </div>
+
+                <!-- Student Premium (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge student">Student Premium</div>
+                    <div class="pricing-price">
+                        <span class="amount" id="student-price">$2.99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-desc">Everything a serious student needs to dominate their academic goals.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Unlimited Subjects
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Deep Analytics &amp; Charts
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Smart Reminders &amp; Alerts
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Personalized Recommendations
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Subject Progress Reports
+                        </div>
+                        <div class="pricing-feature unavailable">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Google/Outlook Sync
+                        </div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="pricing-student-cta">Start Student Plan</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card">
+                    <div class="pricing-badge pro">Pro</div>
+                    <div class="pricing-price">
+                        <span class="amount" id="pro-price">$4.99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-desc">For power users, researchers, and students with the most complex workloads.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Everything in Student Premium
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Google &amp; Outlook Sync
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            AI Study Copilot Chatbot
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Priority Email Support
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            API Access &amp; Export
+                        </div>
+                        <div class="pricing-feature">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            Early Access to New Features
+                        </div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="pricing-pro-cta">Start Pro Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT & FAQ ===== -->
+    <section class="section" id="contact-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get In Touch</span>
+                <h2>We're Here to Help</h2>
+                <p>Questions about the algorithm, pricing, or features? Our team responds within 24 hours.</p>
+            </div>
+
+            <div class="grid grid-2 reveal" style="align-items: start; gap: var(--space-12);">
+                <!-- Contact Form -->
+                <div class="card" style="padding: var(--space-8);">
+                    <h3 class="font-bold text-xl" style="margin-bottom: var(--space-6);">Send Us a Message</h3>
+                    <form id="home-contact-form">
+                        <div class="form-group">
+                            <label for="home-contact-name">Your Name</label>
+                            <input type="text" id="home-contact-name" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="home-contact-email">Email Address</label>
+                            <input type="email" id="home-contact-email" class="form-control" placeholder="jane@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="home-contact-message">Message</label>
+                            <textarea id="home-contact-message" class="form-control" placeholder="How can we help you?" required style="min-height: 140px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="home-contact-submit">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div>
+                    <h3 class="font-bold text-xl" style="margin-bottom: var(--space-6);">Frequently Asked Questions</h3>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does the AI distribute study hours?</span>
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-content">The scheduler divides hours by subject difficulty weights. If Calculus is "Hard" and History is "Easy," Calculus receives significantly more slots while History gets spaced touchpoints at review intervals to protect retention.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I change my schedule mid-week?</span>
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-content">Absolutely. StudyAI is built for real life. Simply adjust your daily hours or skip a session, then hit "Regenerate" — the algorithm recalculates and distributes remaining sessions automatically.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my data private and secure?</span>
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-content">All study data, timetables, and user credentials are stored locally in your browser's localStorage. No data is uploaded to any server, ensuring complete privacy.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I try Pro features before paying?</span>
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-content">Yes! Our Free plan gives you complete access to core features with no time limit. You can upgrade to unlock advanced analytics and unlimited subjects at any time.</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: var(--space-6);">
+                        <a href="contact.html" class="btn btn-outline" id="see-all-faqs-btn">View All FAQs →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section" id="cta-section">
+        <div class="container">
+            <div class="welcome-banner reveal" style="padding: var(--space-16) var(--space-12); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <span style="display:inline-block; background: rgba(255,255,255,0.15); color: white; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 16px; border-radius: var(--radius-full); margin-bottom: var(--space-4); border: 1px solid rgba(255,255,255,0.25);">🚀 Start Your Journey</span>
+                <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); font-family: var(--font-display); font-weight: 800; margin-bottom: var(--space-4); color: white; max-width: 700px;">
+                    Start Your AI-Powered Learning Journey Today
+                </h2>
+                <p style="margin-bottom: var(--space-8); max-width: 560px; color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.7;">
+                    Join 50,000+ students who replaced planning stress with consistent, measurable academic results. Your first study plan is ready in 2 minutes — completely free.
+                </p>
+                <div class="flex gap-4 flex-wrap flex-center">
+                    <a href="signup.html" class="btn btn-lg" style="background: var(--white); color: var(--green-800); font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: none;" id="cta-btn-primary">Get Started Free</a>
+                    <a href="dashboard.html" class="btn btn-lg" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); font-weight: 700;" id="cta-btn-demo">View Demo →</a>
+                </div>
+                <p style="margin-top: var(--space-6); color: rgba(255,255,255,0.5); font-size: 0.82rem;">No credit card required · Cancel anytime · Setup in 2 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>StudyAI</h3>
+                    <p>Building high-performing students through smart, AI-driven organization and scheduling tools trusted by 50,000+ learners worldwide.</p>
+                    <div class="footer-social" style="margin-top: var(--space-5);">
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Follow us on Twitter">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://github.com/Himanshu-GenAI/EduPlanner-AI" target="_blank" rel="noopener" aria-label="View on GitHub">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="features.html">Features</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="planner.html">Study Planner</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="testimonials.html">Reviews</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html#faq-section">FAQs</a>
+                    <a href="#pricing-section">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">GDPR</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 StudyAI. Built with ❤️ for InAmigos. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Privacy Policy</a>
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- Pricing Toggle & FAQ Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    item.classList.toggle('open');
+                });
+            });
+
+            // Contact Form
+            const contactForm = document.getElementById('home-contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    showToast('Thank you! We will get back to you within 24 hours.', 'success');
+                    contactForm.reset();
+                });
+            }
+
+            // Pricing Toggle
+            const toggleBtn = document.getElementById('billing-toggle-btn');
+            const monthlyLabel = document.getElementById('billing-monthly-label');
+            const yearlyLabel = document.getElementById('billing-yearly-label');
+            const studentPrice = document.getElementById('student-price');
+            const proPrice = document.getElementById('pro-price');
+
+            let isYearly = false;
+
+            const monthlyPrices = { student: '$2.99', pro: '$4.99' };
+            const yearlyPrices = { student: '$2.39', pro: '$3.99' };
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    isYearly = !isYearly;
+                    toggleBtn.classList.toggle('yearly', isYearly);
+                    monthlyLabel.classList.toggle('active', !isYearly);
+                    yearlyLabel.classList.toggle('active', isYearly);
+                    
+                    const prices = isYearly ? yearlyPrices : monthlyPrices;
+                    if (studentPrice) studentPrice.textContent = prices.student;
+                    if (proPrice) proPrice.textContent = prices.pro;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

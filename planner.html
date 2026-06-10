@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner — StudyAI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled no-print" id="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>StudyAI</span>
+            </a>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <div class="flex gap-2" id="nav-auth-actions"></div>
+                <button class="hamburger" id="nav-hamburger" aria-label="Open sidebar menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar no-print" id="app-sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"></path></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="planner.html" class="sidebar-link active">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Study Planner</span>
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Home Page</span>
+                </a>
+            </nav>
+            <div class="sidebar-profile"></div>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="main-content">
+            <div class="welcome-banner no-print" style="margin-bottom: var(--space-6);">
+                <h1>AI Study Planner Tool</h1>
+                <p>Configure your exams, difficulties, and daily study hours. Our algorithm allocates slots to maximize focus cycles.</p>
+            </div>
+
+            <!-- Timetable Print Header (Visible during print only) -->
+            <div class="print-only" style="display:none; text-align:center; margin-bottom: 24px;">
+                <h1 style="font-size: 2rem; font-family: var(--font-display); color: var(--green-700);">My StudyAI Timetable</h1>
+                <p style="font-size: 0.9rem; color: var(--gray-600);">Generated on StudyAI.io • Optimize focus, balance workload, spacing retention.</p>
+            </div>
+
+            <!-- Main Interactive Planner Grid -->
+            <div class="planner-grid">
+                <!-- Inputs Section (Left Panel) -->
+                <div class="no-print" style="display:flex; flex-direction:column; gap:var(--space-6);">
+                    <!-- Settings Card -->
+                    <div class="widget-card">
+                        <h2 class="widget-title" style="margin-bottom:var(--space-4);">1. Study Parameters</h2>
+                        
+                        <!-- Daily Study Budget -->
+                        <div class="form-group">
+                            <div class="flex-between">
+                                <label for="study-budget-slider">Study hours / Day</label>
+                                <span id="budget-value-display" class="font-bold text-green">4 hrs</span>
+                            </div>
+                            <input type="range" id="study-budget-slider" class="form-control" min="1" max="10" value="4" style="padding:0; accent-color: var(--green-600); cursor:pointer;">
+                        </div>
+
+                        <!-- Preferred Times -->
+                        <div class="form-group">
+                            <label for="study-pref-time">Preferred Study Time</label>
+                            <select id="study-pref-time" class="form-control">
+                                <option value="morning">Morning (09:00 - 13:00)</option>
+                                <option value="afternoon">Afternoon (14:00 - 18:00)</option>
+                                <option value="evening">Evening (18:00 - 22:00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Subject Input Card -->
+                    <div class="widget-card">
+                        <h2 class="widget-title" style="margin-bottom:var(--space-4);">2. Add Subjects & Exams</h2>
+                        
+                        <form id="add-subject-form">
+                            <div class="form-group">
+                                <label for="sub-name">Subject Name</label>
+                                <input type="text" id="sub-name" class="form-control" placeholder="e.g. Calculus II" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sub-difficulty">Difficulty Level</label>
+                                <select id="sub-difficulty" class="form-control">
+                                    <option value="Hard">Hard (Requires extra slots)</option>
+                                    <option value="Medium" selected>Medium (Standard slots)</option>
+                                    <option value="Easy">Easy (Fewer spacing slots)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sub-exam-date">Final Exam Date</label>
+                                <input type="date" id="sub-exam-date" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-sm" style="width: 100%;">Add Subject</button>
+                        </form>
+
+                        <div class="divider" style="margin: 16px 0;"></div>
+
+                        <h3 class="font-semibold text-sm" style="margin-bottom: 8px;">Active Subject List</h3>
+                        <div id="subject-list-element">
+                            <!-- Subject chips load dynamically -->
+                        </div>
+
+                        <button id="generate-schedule-btn" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Generate AI Timetable</button>
+                    </div>
+                </div>
+
+                <!-- Calendar Schedule Timetable (Right Panel) -->
+                <div style="display:flex; flex-direction:column; gap:var(--space-4);">
+                    <div class="flex-between no-print">
+                        <h2 class="widget-title">Generated Timetable</h2>
+                        <div class="flex gap-2">
+                            <button id="pdf-download-btn" class="btn btn-outline btn-sm">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                                <span>Export PDF</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Timetable Table Grid -->
+                    <div class="calendar-wrapper card" style="padding:0;">
+                        <div class="calendar-grid" id="calendar-grid-element">
+                            <!-- Injected by planner.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/planner.js"></script>
+</body>
+</html>

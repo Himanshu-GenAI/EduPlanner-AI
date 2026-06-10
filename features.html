@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features & Pricing — StudyAI</title>
+    <meta name="description" content="Explore StudyAI's 8 core features: AI timetable generator, smart reminders, goal tracking, streak tracking, exam planner, performance analytics, personalized recommendations, and subject reports.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>StudyAI</span>
+            </a>
+            <div class="nav-menu" id="nav-menu-drawer">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </button>
+                <div class="flex gap-2" id="nav-auth-actions"></div>
+                <button class="hamburger" id="nav-hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="hero-bg" style="padding-top: calc(var(--navbar-height) + var(--space-16)); padding-bottom: var(--space-16);" id="features-header">
+        <div class="container">
+            <div class="section-header reveal" style="max-width: 680px;">
+                <span class="section-tag">Capabilities</span>
+                <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: var(--space-4);">Engineered for <span class="gradient-text">Peak Performance</span></h1>
+                <p class="text-lg text-secondary">
+                    8 powerful tools built on established neuroscience principles to maximize focus, retention, and exam performance — from the first session to the final exam.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 8 FEATURE CARDS ===== -->
+    <section class="section" id="features-grid-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5);" class="reveal">
+                <!-- 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3>AI Timetable Generator</h3>
+                    <p>Calculates dynamic study hours per day, prioritizes weak areas, and builds a comprehensive weekly calendar balancing all your subjects by difficulty and deadline.</p>
+                </div>
+                <!-- 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon amber">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <h3>Smart Reminders</h3>
+                    <p>Timely browser toast alerts right before sessions begin to minimize procrastination and establish a powerful, consistent study habit loop that sticks.</p>
+                </div>
+                <!-- 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon indigo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Goal Tracking</h3>
+                    <p>Set weekly milestone requirements and track target vs. actual task completion rates in real-time. Visual gauges keep your academic ambitions front and center.</p>
+                </div>
+                <!-- 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon rose">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                    </div>
+                    <h3>Study Streak Tracking</h3>
+                    <p>Gamified daily streaks, milestone rewards, and activity heatmaps create a powerful consistency engine that transforms sporadic studying into an unbreakable routine.</p>
+                </div>
+                <!-- 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon sky">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3>Exam Preparation Planner</h3>
+                    <p>Automatically prioritizes subjects with approaching exams and spaces out review cycles using spaced repetition science to reinforce learning when retention is most vulnerable.</p>
+                </div>
+                <!-- 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                    </div>
+                    <h3>Performance Analytics</h3>
+                    <p>Visual analytics with subject breakdown percentages, Canvas-rendered donut charts, long-term streak heatmaps, and a personalized focus index score updated daily.</p>
+                </div>
+                <!-- 7 -->
+                <div class="feature-card">
+                    <div class="feature-icon violet">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M12 20v1M7.05 7.05l-.707.707"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3>Personalized Recommendations</h3>
+                    <p>AI identifies your weakest subjects and study patterns, then suggests optimal session lengths, technique adjustments, and content focus areas to maximize your improvement rate.</p>
+                </div>
+                <!-- 8 -->
+                <div class="feature-card">
+                    <div class="feature-icon indigo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3>Subject-wise Progress Reports</h3>
+                    <p>Detailed progress tracking per subject — hours logged, tasks completed, revision coverage percentage, and predicted exam readiness score updated in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="section" style="background: var(--bg-secondary);" id="pricing-comparison">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Pricing</span>
+                <h2>Compare StudyAI Plans</h2>
+                <p>Start for free and upgrade as your academic workloads demand more resources.</p>
+            </div>
+
+            <div class="billing-toggle reveal" id="billing-toggle-container">
+                <span id="billing-monthly-label" class="active">Monthly</span>
+                <button class="toggle-switch" id="billing-toggle-btn" aria-label="Toggle billing period"></button>
+                <span id="billing-yearly-label">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-grid reveal">
+                <!-- Free -->
+                <div class="pricing-card">
+                    <div class="pricing-badge free">Free Forever</div>
+                    <div class="pricing-price"><span class="amount">$0</span><span class="period">/month</span></div>
+                    <p class="pricing-desc">Everything you need to start planning smarter.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>AI Schedule (3 subjects)</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Basic Dashboard</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Streak Tracker</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>PDF Export</div>
+                        <div class="pricing-feature unavailable"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>Advanced Analytics</div>
+                        <div class="pricing-feature unavailable"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>Calendar Sync</div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="feat-pricing-free">Get Started Free</a>
+                </div>
+
+                <!-- Student Premium (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge student">Student Premium</div>
+                    <div class="pricing-price"><span class="amount" id="feat-student-price">$2.99</span><span class="period">/month</span></div>
+                    <p class="pricing-desc">For serious students who want to dominate their grades.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Unlimited Subjects</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Deep Analytics & Charts</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Smart Reminders</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Personalized Recommendations</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Subject Progress Reports</div>
+                        <div class="pricing-feature unavailable"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>Google/Outlook Sync</div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="feat-pricing-student">Start Student Plan</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card">
+                    <div class="pricing-badge pro">Pro</div>
+                    <div class="pricing-price"><span class="amount" id="feat-pro-price">$4.99</span><span class="period">/month</span></div>
+                    <p class="pricing-desc">For power users with the most complex academic workloads.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Everything in Student Premium</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Google & Outlook Sync</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>AI Copilot Chatbot</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Priority Support</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>API Access</div>
+                        <div class="pricing-feature"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>Early Feature Access</div>
+                    </div>
+                    <a href="signup.html" class="pricing-cta" id="feat-pricing-pro">Start Pro Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm" id="features-cta">
+        <div class="container">
+            <div class="welcome-banner reveal" style="padding: var(--space-10) var(--space-12); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-family: var(--font-display); font-weight: 800; margin-bottom: var(--space-4); color: white;">Experience Every Feature — Free</h2>
+                <p style="margin-bottom: var(--space-6); color: rgba(255,255,255,0.8);">No credit card required. Get started and build your first AI study schedule in minutes.</p>
+                <a href="signup.html" class="btn btn-lg" style="background: white; color: var(--green-800); font-weight: 700; border: none;" id="features-cta-btn">Get Started Free →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3>StudyAI</h3><p>Building high-performing students through smart, AI-driven organization tools.</p></div>
+                <div class="footer-col"><h4>Platform</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="dashboard.html">Dashboard</a></div>
+                <div class="footer-col"><h4>Support</h4><a href="testimonials.html">Reviews</a><a href="contact.html">Contact Us</a><a href="contact.html#faq-section">FAQs</a></div>
+                <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 StudyAI. Built with ❤️ for InAmigos. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Privacy Policy</a>
+                    <a href="#" style="font-size: 0.8rem; color: var(--gray-500);">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('billing-toggle-btn');
+            const monthlyLabel = document.getElementById('billing-monthly-label');
+            const yearlyLabel = document.getElementById('billing-yearly-label');
+            const studentPrice = document.getElementById('feat-student-price');
+            const proPrice = document.getElementById('feat-pro-price');
+            let isYearly = false;
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    isYearly = !isYearly;
+                    toggleBtn.classList.toggle('yearly', isYearly);
+                    monthlyLabel.classList.toggle('active', !isYearly);
+                    yearlyLabel.classList.toggle('active', isYearly);
+                    if (studentPrice) studentPrice.textContent = isYearly ? '$2.39' : '$2.99';
+                    if (proPrice) proPrice.textContent = isYearly ? '$3.99' : '$4.99';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Streaks — StudyAI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled no-print" id="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>StudyAI</span>
+            </a>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <div class="flex gap-2" id="nav-auth-actions"></div>
+                <button class="hamburger" id="nav-hamburger" aria-label="Open sidebar menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- APP LAYOUT -->
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar no-print" id="app-sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"></path></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="planner.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Study Planner</span>
+                </a>
+                <a href="analytics.html" class="sidebar-link active">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Home Page</span>
+                </a>
+            </nav>
+            <div class="sidebar-profile"></div>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="main-content">
+            <div class="welcome-banner no-print" style="margin-bottom: var(--space-6);">
+                <h1>Productivity Insights</h1>
+                <p>Monitor your study streaks, subject hour distributions, and focus efficiency gauges below.</p>
+            </div>
+
+            <!-- Heatmap / Streak Grid -->
+            <div class="card reveal" style="margin-bottom: var(--space-8); padding: var(--space-6);">
+                <div class="flex-between" style="margin-bottom: var(--space-4);">
+                    <h2 class="widget-title">Study Streak Tracker</h2>
+                    <span class="badge badge-green" id="streak-days-badge">12 Days Streak 🔥</span>
+                </div>
+                <div class="heatmap-grid" id="heatmap-grid-element">
+                    <!-- Loaded dynamically via analytics.js -->
+                </div>
+                <div class="flex gap-4" style="margin-top: 10px; font-size: 0.75rem; color: var(--text-secondary); justify-content: flex-end;">
+                    <span>Less</span>
+                    <span style="width: 12px; height: 12px; border-radius: 2px; background: var(--gray-100);"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 2px; background: var(--green-100);"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 2px; background: var(--green-300);"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 2px; background: var(--green-500);"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 2px; background: var(--green-700);"></span>
+                    <span>More</span>
+                </div>
+            </div>
+
+            <!-- Insights Column breakdown -->
+            <div class="dashboard-grid reveal">
+                <!-- Subject Performance Breakdown -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <h2 class="widget-title">Subject-wise Study Time</h2>
+                        <span class="text-xs text-secondary">Target vs Actual</span>
+                    </div>
+                    <div id="subject-bars-container" style="display:flex; flex-direction:column; gap: var(--space-4); margin-top:var(--space-2);">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Time Distribution Donut Chart and Focus Score Gauge -->
+                <div style="display:flex; flex-direction:column; gap:var(--space-8);">
+                    <!-- Productivity Gauge -->
+                    <div class="widget-card" style="align-items:center; text-align:center;">
+                        <h2 class="widget-title" style="margin-bottom: var(--space-4);">Focus Quality Index</h2>
+                        <div class="circular-progress" style="width:100px; height:100px;" id="focus-quality-gauge">
+                            <svg style="width:100px; height:100px;">
+                                <circle class="bg" cx="50" cy="50" r="42" style="stroke-width:8;"></circle>
+                                <circle class="fill" id="focus-gauge-fill" cx="50" cy="50" r="42" style="stroke-width:8;" stroke-dasharray="263.893" stroke-dashoffset="263.893"></circle>
+                            </svg>
+                            <span class="value" id="focus-gauge-value" style="font-size: 1.3rem;">88%</span>
+                        </div>
+                        <p class="text-xs text-secondary" style="margin-top: 10px;">Calculated using Pomodoro completions and task completion percentages.</p>
+                    </div>
+
+                    <!-- Donut Chart Card -->
+                    <div class="widget-card" style="align-items:center;">
+                        <h2 class="widget-title" style="margin-bottom:var(--space-4);">Time Distribution</h2>
+                        <canvas id="time-distribution-canvas" class="analytics-canvas" style="max-width: 220px; max-height: 220px;"></canvas>
+                        <div id="donut-legend" class="flex flex-wrap gap-3" style="justify-content:center; margin-top:var(--space-4);">
+                            <!-- Legend loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>

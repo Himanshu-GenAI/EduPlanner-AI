@@ -1,0 +1,216 @@
+/* ================================================================
+   AI STUDY PLANNER — DARK MODE STYLES
+   Triggered by [data-theme="dark"] on <html>
+   ================================================================ */
+
+[data-theme="dark"] {
+    /* --- Override Semantics --- */
+    --bg-primary: #111827;
+    --bg-secondary: #0b0f19;
+    --bg-tertiary: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #9ca3af;
+    --border-color: #374151;
+    --border-light: #1f2937;
+
+    /* --- Green overrides for dark contrast --- */
+    --primary-light: rgba(16, 185, 129, 0.15);
+    --green-50: rgba(16, 185, 129, 0.1);
+    --green-100: rgba(16, 185, 129, 0.2);
+    
+    /* --- Neutral Overrides --- */
+    --gray-50: #111827;
+    --gray-100: #1f2937;
+    --gray-200: #374151;
+    --gray-300: #4b5563;
+    --gray-400: #9ca3af;
+    --gray-500: #d1d5db;
+    --gray-600: #e5e7eb;
+    
+    /* --- Shadows --- */
+    --shadow-xs: 0 1px 2px rgba(0,0,0,0.5);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5), 0 8px 10px -6px rgba(0,0,0,0.5);
+    --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.7);
+    --shadow-green: 0 8px 25px rgba(5, 150, 105, 0.15);
+
+    /* --- Glass overrides for dark --- */
+    --glass-bg: rgba(17, 24, 39, 0.7);
+    --glass-bg-strong: rgba(17, 24, 39, 0.88);
+    --glass-border: rgba(16, 185, 129, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* --- Hero gradient dark --- */
+    --gradient-hero: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #0f172a 100%);
+}
+
+/* Glassmorphism navbar overrides in dark mode */
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(17, 24, 39, 0.9);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+[data-theme="dark"] .nav-menu {
+    background: rgba(17, 24, 39, 0.98);
+    border-color: rgba(255,255,255,0.08);
+}
+
+/* Dark mode overrides for components */
+[data-theme="dark"] .task-item {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .calendar-header-cell,
+[data-theme="dark"] .calendar-time-cell {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .calendar-cell {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .calendar-cell:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .card-flat {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: transparent;
+    color: var(--green-400);
+    border-color: var(--green-700);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: var(--green-500);
+}
+
+[data-theme="dark"] .accordion-header {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .accordion-header:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar dark override */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--gray-700);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--green-600);
+}
+
+/* ===== DARK MODE — NEW PREMIUM COMPONENTS ===== */
+
+[data-theme="dark"] .glass-card {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+}
+
+[data-theme="dark"] .glass-panel {
+    background: rgba(17, 24, 39, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .hero-bg {
+    background: var(--gradient-hero);
+}
+
+[data-theme="dark"] .hero-bg::before {
+    background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .hero-bg::after {
+    background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .pricing-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .pricing-card:not(.featured) .pricing-cta {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-400);
+    border-color: var(--green-700);
+}
+
+[data-theme="dark"] .pricing-card:not(.featured) .pricing-cta:hover {
+    background: var(--green-600);
+    color: white;
+    border-color: transparent;
+}
+
+[data-theme="dark"] .pricing-badge.free {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--green-400);
+}
+
+[data-theme="dark"] .pricing-badge.pro {
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+}
+
+[data-theme="dark"] .dashboard-mockup {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .mockup-stat,
+[data-theme="dark"] .mockup-calendar,
+[data-theme="dark"] .mockup-progress-row,
+[data-theme="dark"] .mockup-exam-list {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .mockup-day {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .pain-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .vs-col.bad {
+    background: rgba(244, 63, 94, 0.08);
+    border-color: rgba(244, 63, 94, 0.15);
+}
+
+[data-theme="dark"] .vs-col.good {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .stat-number-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .testimonial-card-premium {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .quote-mark {
+    color: rgba(16, 185, 129, 0.3);
+}
